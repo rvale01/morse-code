@@ -35,6 +35,29 @@ def initNode():
         ["Z", "--.."],
         ["Q", "--.-"],
         ["O", "---"],
+
+        # symbols
+        [".", ".-.-.-"],
+        ["(", "-.--."],
+        ["+", ".-.-."],
+        ["¿", "..-.-"],
+
+        [",", "--..--"],
+        [")", "-.--.-"],
+        ["-", "-....-"],
+        ["¡", "--...-"],
+
+        ["?", "..--."],
+        ["&", ".-..."],
+        ["_", "..--.-"],
+
+        ["’", ".----."],
+        [":", "---..."],
+        ['"', ".-..-."],
+
+        ["!", "-.-.--"],
+        [";", "-.-.-."],
+        ["$", "...-..-"],
     ]
 
     for x in data:
@@ -61,17 +84,17 @@ def encode(msg):
     node = initNode()
 
     #Convert the message, one character at a time!
-    for character in msg:
-        if(character != " "):
+    for x in range(len(msg)):
+        if(msg[x] != " "):
             result = []
-            loopEncode(node,character,result)
+            loopEncode(node,msg[x],result)
             code = "".join(result)
-            morseCode = morseCode + code  
-            if(character != msg[len(msg)-1]):
-                 morseCode = morseCode + ' '
+            morseCode = morseCode + code
+            if(x != (len(msg) -1)):
+                morseCode = morseCode + ' '
         else:
-            morseCode = morseCode + " "
-        
+            morseCode = morseCode + "/ "
+
     return morseCode
         
 def decode(msg):
@@ -97,8 +120,11 @@ def decode(msg):
                 else:
                     loop = False
                     message = message + tempNode.left.data
+            elif(x[count] == "/"):
+                message = message + " "
+                loop = False
     return message.lower()
 
-# encoded = encode("VALE")
+# encoded = encode("hello?")
 # print(encoded)
-# print(decode(encoded))
+# print(decode(".... . .-.. .-.. --- ..--.")) 

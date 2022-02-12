@@ -3,19 +3,22 @@ class Node:
         self.left = None
         self.right = None
         self.data = data
-        self.root = root
 
     def looping(self, node, code, x, letter):
         if(code[x] == "-"):
             if(len(code) > (x+1)):
+                if(node.right == None):
+                    node.right = Node("blank")
                 self.looping(node.right, code, x+1, letter)
             else:
-                node.right = Node(letter, node)
+                node.right = Node(letter)
         elif(code[x] == "."):
             if(len(code) > (x+1)):
-                self.looping(node.left, code, x+1, letter )
+                if(node.left == None):
+                    node.left = Node("blank")
+                self.looping(node.left, code, x+1, letter)
             else:
-                node.left = Node(letter, node)
+                node.left = Node(letter)
 
     def insert(self, letter, code):
         tempNode = self
