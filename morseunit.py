@@ -1,5 +1,7 @@
 import unittest
 import morse
+import heap
+# import tree
 
 class TestMorse(unittest.TestCase):
     def test_encode_us(self):
@@ -19,6 +21,10 @@ class TestMorse(unittest.TestCase):
 
         # symbols
         self.assertEqual( morse.encode('hello?'), '.... . .-.. .-.. --- ..--.')
+
+        # heap
+        self.assertEqual(heap.decode_bt('-.-. --- -.. .. -. --.'), 'coding')
+        self.assertEqual(heap.decode_bt('.-- --- -. -.-'), 'work')
 
 
 if __name__ == '__main__':
