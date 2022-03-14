@@ -14,14 +14,20 @@ class Node:
                     node.right = Node("blank")
                 self.looping(node.right, code, x+1, letter)
             else:
-                node.right = Node(letter)
+                if(node.right != None and node.right.data == "blank"):
+                    node.right.data = letter
+                else:
+                    node.right = Node(letter)
         elif(code[x] == "."):
             if(len(code) > (x+1)):
                 if(node.left == None):
                     node.left = Node("blank")
                 self.looping(node.left, code, x+1, letter)
             else:
-                node.left = Node(letter)       
+                if(node.left != None and node.left.data == "blank"):
+                    node.left.data = letter
+                else:
+                    node.left = Node(letter)   
 
     def insert(self, letter, code):
         tempNode = self
@@ -72,7 +78,9 @@ class Node:
 
 # Use the insert method to add nodes
 # root = Node()
-# root.insert(6)
+# root.insert("E", "---...")
+# root.insert("B", "-")
+# root.PrintTree()
 # root.insert(14)
 # root.insert(3)
 # data = [
