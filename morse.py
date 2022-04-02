@@ -3,6 +3,7 @@ from tree import Node
 def initNode():
     root = Node()
     data = [
+        # letters
         ["E", "."],
 
         ["I", ".."],
@@ -51,7 +52,7 @@ def initNode():
         ["&", ".-..."],
         ["_", "..--.-"],
 
-        # ["’", ".----."],
+        ["’", ".----."],
         [":", "---..."],
         ['"', ".-..-."],
 
@@ -59,9 +60,9 @@ def initNode():
         [";", "-.-.-."],
         ["$", "...-..-"],
 
+        # numbers
         ["0", "-----"],
         ["1", ".----"],
-        ["’", ".----."],
         ["2", "..---"],
         ["3", "...--"],
         ["4", "....-"],
@@ -96,7 +97,7 @@ def encode(msg):
     morseCode = ""
     node = initNode()
 
-    #Convert the message, one character at a time!
+    #Converting the message one character at a time
     for x in range(len(msg)):
         if(msg[x] != " "):
             result = []
@@ -112,7 +113,7 @@ def encode(msg):
         
 def decode(msg):
     msg = msg.split(" ")
-    node = initNode()
+    node = initNode() #the tree is created and saved
     message = ""
     for x in msg:
         loop = True
