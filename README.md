@@ -28,3 +28,36 @@ This repo contains all the exercises for both worksheet 2.1 and worksheet 2.2 fo
  The heap is right in the middle between the two of them. It is quite easy to implement once you get the logic, a bit more difficult than the dictionaries, but definetely faster to implement than the tree. 
  
  The fastes is the binary tree, which might take longer to implement than the previous examples, but it is the best in performance.   
+
+<h2>How to run the code</h2>
+All files in this project can be ran by using the following command:
+```
+python3 morse.py
+```
+
+You just need to change 'morse.py', with the file you want to run
+
+<h2>Tasks</h2>
+<h3>Worksheet 2.1</h3>
+File to check for <b>Task2</b>:
+<li>morse.py</li>
+<li>tree.py</li>
+<li>main.py</li>
+<br/><br/>
+File to check for <b>Task3</b>:
+<li>assert_tests.py</li>
+<li>morseunit.py</li>
+<br/><br/>
+
+<h3>Worksheet 2.2</h3>
+File to check for <b>Task1</b>:
+<li>heap.py</li>
+<br/><br/>
+File to check for <b>Task2</b>:
+<li>ham_radio.py</li>
+<br/><br/>
+File to check for <b>Task3</b>:
+<li>morse_server.py</li>
+<br/><br/>
+
+
